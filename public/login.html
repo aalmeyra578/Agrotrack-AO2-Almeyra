@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - AgroTrack</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Login de Demostración</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="formLogin">
+      <label>Usuario:</label>
+      <input type="text" id="usuario" required>
+
+      <label>Contraseña:</label>
+      <input type="password" id="clave" required>
+
+      <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <div id="resultado"></div>
+  </main>
+
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const clave = document.getElementById('clave').value;
+      document.getElementById('resultado').innerHTML = `
+        <p><strong>Usuario:</strong> ${usuario}</p>
+        <p><strong>Clave:</strong> ${clave}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
